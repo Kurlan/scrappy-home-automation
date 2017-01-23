@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title: "Unboxing and setting up your Raspberry Pi"
 categories: raspberrypi setup unbox
 date:   2017-01-22 13:34:01 -0800
