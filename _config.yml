@@ -16,7 +16,7 @@
 title: Scrappy Home Automation
 email: stevoh@gmail.com
 description: > # this means to ignore newlines until "baseurl:" 
- DIY home automation within reach.  It doesn't have to cost an arm and a leg!
+ DIY home automation
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: jekyllrb
