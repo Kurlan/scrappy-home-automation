@@ -1,7 +1,6 @@
 ---
 layout: default
 title: "Setting up your Raspberry Pi"
-categories: raspberrypi setup unbox
 date:   2017-01-22 13:34:01 -0800
 ---
 # In The Begining
