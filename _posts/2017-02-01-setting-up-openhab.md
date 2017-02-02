@@ -60,11 +60,10 @@ sudo apt-get update
 ```
 
 ### Install openHAB
-Now you can finally install.  We will also install all add-ons to avoid having to install them later by hand
+Now you can finally install.
 
 ```shell
 sudo apt-get install openhab2
-sudo apt-get install openhab2-addons
 ```
 
 After the installation there is the following message
@@ -77,6 +76,18 @@ After the installation there is the following message
  sudo /bin/systemctl start openhab2.service
 ```
 
-Running the three commands will ensure that if power is lost openHAB will restart, and will also start openHAB.  Going to `http://raspberrypi:8080` (or the hostname/IP of your Pi) in a browser should load the following page:
+Running the three commands will ensure that if power is lost the openHAB service will restart, and will also start openHAB.  Going to `http://raspberrypi:8080` (or the hostname/IP of your Pi) in a browser should load the following page:
 
-Go ahead and click Standard.  Congratulations, you've installed openHAB 2.0!
+{% include images.html name="openhab_initial_screen.png" caption="We have lift off!" %}
+
+Go ahead and click `Standard`.  You should now see:
+
+{% include images.html name="openhab_start_screen.png" caption="You should see three different choices for UI" %}
+
+### Install add-ons
+To avoid having to install all of the add-ons manually you can install them all at once now.
+
+```shell
+sudo apt-get install openhab2-addons
+```
+Congratulations, you've installed openHAB 2.0!
