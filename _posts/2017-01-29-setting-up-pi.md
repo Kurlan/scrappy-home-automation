@@ -15,7 +15,8 @@ The goal is to be able to remotely access our Pi by via ssh so we don't need to 
 * A 2.5A micro USB power cord and adapter
 * An HDMI cable and monitor
 * USB Mouse & Keyboard
-* A wired and wireless network connections
+* A wired (optional) and wireless network connections
+* Familiarity with the Linux command line and how to `ssh` to a remote server
 
 ## The Hardware
 We decided that we would use the <a target="_blank" href="https://www.amazon.com/gp/product/B01CD5VC92/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B01CD5VC92&linkCode=as2&tag=scrappyhomeau-20&linkId=cc81c3d2f83cc28b6fefe22ad022b9b2">Raspberry Pi 3</a><img src="//ir-na.amazon-adsystem.com/e/ir?t=scrappyhomeau-20&l=am2&o=1&a=B01CD5VC92" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" > as the basis for our home automation.  The main reasons were the cost (who can beat $40 bucks) and the form factor.  This thing is tiny.  It has wi-fi and Bluetooth built in as well so there is less wiring for the setup in general.  It has a fast processor and can run a Linux, which gives us the ability to install a large amount of freely available software.
@@ -32,9 +33,9 @@ After marveling at your tiny new toy it's time to get to work.  Connect your HDM
 
 After some boot screens you should eventually get to the desktop GUI.
 
-{% include images.html name="jessie-desktop.jpg" caption="Wow, a complete linux GUI!" %}
+{% include images.html name="jessie-desktop.jpg" caption="Wow, a complete Linux GUI!" %}
 
-Open a terminal (find it by clicking on the `Menu` button on the top right) and we will get start setting up your pi.  First things first, it's important to do some general setup.  Type in:
+Open the `Terminal` (find it by clicking on the `Menu` button on the top left) and we will get start setting up your pi.  First things first, it's important to do some general setup.  Type in:
 
 ```shell
 sudo rasp-config

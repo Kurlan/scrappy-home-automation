@@ -6,7 +6,7 @@ date:   '2017-02-01T18:01:00+0800'
 # Installing openHAB
 
 ## Goal
-The goal for this post is to install openHAB 2.0 beta
+The goal for this post is to install openHAB 2.0
 
 ## What you need
 * A Raspberry Pi with Raspbian installed and ssh access
