@@ -33,12 +33,12 @@ Configuration files for openHAB are located by default in `/etc/openhab2`.  Item
 ```
 Group GarageDoor <garagedoor> 
 
-Switch GarageDoorClosedSensor <garagedoor> (GarageDoor)
+Contact GarageDoorClosedSensor <garagedoor> (GarageDoor)
 Switch GarageDoorSwitch <switch> (GarageDoor) 
 ```
 
 ### What have we done?
-The above is a basic items definition. Each line represents an Item.  The first token in the line specifies the ItemType.  In this case we have two, `Group` and `Switch`.  The `Group` type allows us to aribtrarily group items together.  The `Switch` type allows us, when reading from an Item state, to determine if something is on or off.  When writing to an Item, it allows us to flip a switch from on to off and vice versa.  A full list of ItemTypes can be found [here](http://docs.openhab.org/configuration/items.html#item-types). 
+The above is a basic items definition. Each line represents an Item.  The first token in the line specifies the ItemType.  In this case we have three, `Group`, `Switch`, and `Contact`.  The `Group` type allows us to arbitrarily group items together.  The `Contact` type allows us to to determine if something is on or off when reading from an Item state. `Switch` allows us to flip a switch from on to off and vice versa.  A full list of ItemTypes can be found [here](http://docs.openhab.org/configuration/items.html#item-types). 
 
 The second token defines the name of the Item.  Item names must be unique.
 
@@ -55,7 +55,7 @@ A sitemap is a view of all of the entities within openHAB.  This allows you to o
 Sitemap declarations are house in the `/etc/openhab2/sitemaps` directory.  All Sitemap files end with `.sitemap`.  Create a file called `myhouse.sitemap` by running `sudo -u openhab vim /etc/openhab2/sitemaps/myhouse.sitemap` and enter the following text:
 
 ```
-sitemap MyHouse label="My home automation" {
+sitemap myhouse label="My home automation" {
     Frame label="Garage" {
         Text item=GarageDoorClosedSensor
         Switch item=GarageDoorSwitch
