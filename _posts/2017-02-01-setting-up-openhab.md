@@ -43,11 +43,6 @@ Java(TM) SE Runtime Environment (build 1.8.0_121-b13)
 Java HotSpot(TM) Client VM (build 25.121-b13, mixed mode)
 ```
 
-### Install vi
-```shell
-sudo apt-get install vim
-```
-
 ### Install the openHAB repository
 We need to add openHAB to our `apt-get` repository.  
 
