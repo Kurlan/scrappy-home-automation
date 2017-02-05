@@ -57,7 +57,7 @@ Now, when you navigate to `http://raspberrypi:8080/basicui/app?sitemap=myhouse` 
 
 {% include images.html name="sensor_closed.png" caption="The new label for our GarageDoorClosedSensor" %}
 
-{% include images.html name="sensor_open.png" caption="When the contact is applied it swithes to OPEN" %}
+{% include images.html name="sensor_open.png" caption="When the contact is applied it switches to OPEN" %}
 
 ## Inverting the mapping with a Transformation
 One issue here is that when the contact is near the sensor the value is `CLOSED`.  This is technically correct, but it is the opposite of this for our garage door opener because when the door is closed the contact will be near the sensor.  This is not a problem, we just need to do a bit of work.  First, we need to install the transformation add-on. Navigate to the `PaperUI` (http://raspberrypi:8080/) and click on the `Add-ons` tab.  Click on the `Transformations` button.  Finally, click `Install` on the `Map Transformation` add-on.  
