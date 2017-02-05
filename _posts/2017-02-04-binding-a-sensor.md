@@ -78,3 +78,5 @@ Contact GarageDoorClosedSensor "Garage door sensor is [MAP(garageDoorSensor.map)
 When navigating back to the myhouse Sitemap note that the states have been inverted and the values are now lowercase.
 
 Congratulations!  You've configured your first Binding and created your first Transformation!
+
+{% include analytics.html %}

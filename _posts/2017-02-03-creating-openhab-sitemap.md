@@ -73,3 +73,5 @@ Open a browser and naviate to the following URL `http://raspberrypi:8080/basicui
 {% include images.html name="sitemap.png" %}
 
 Congratulations!  You've just created some basic Items and created a Sitemap!
+
+{% include analytics.html %}

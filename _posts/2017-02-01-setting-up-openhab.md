@@ -23,13 +23,18 @@ sudo apt-get upgrade  #This will take several minutes after a fresh install.  Go
 ``` 
 
 ### Install Oracle Java 8
-openHAB 2 requires java 8 to be installed.  We will install Oracle Java 8 and ensure it is the default java for the system.
+openHAB 2 requires java 8 to be installed.  We will install Oracle Java 8 and ensure it is the default java for the system.  First though, we have to add the appropriate keys to authenticate the java packages.
 
 ```shell
+# Update keystore
 echo "deb http://ppa.launchpad.net/webupd8team/java/ubuntu xenial main" | sudo tee /etc/apt/sources.list.d/webupd8team-java.list
 echo "deb-src http://ppa.launchpad.net/webupd8team/java/ubuntu xenial main" | sudo tee -a /etc/apt/sources.list.d/webupd8team-java.list
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys EEA14886
+
+# Update
 sudo apt-get update
+
+# Install
 sudo apt-get install oracle-java8-installer
 sudo apt-get install oracle-java8-set-default
 ```
@@ -89,3 +94,5 @@ To avoid having to install all of the add-ons manually you can install them all 
 sudo apt-get install openhab2-addons
 ```
 Congratulations, you've installed openHAB 2.0!
+
+{% include analytics.html %}

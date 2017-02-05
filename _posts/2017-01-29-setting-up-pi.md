@@ -38,9 +38,9 @@ After some boot screens you should eventually get to the desktop GUI.
 Open the `Terminal` (find it by clicking on the `Menu` button on the top left) and we will get start setting up your Pi.  First things first, it's important to do some general setup.  Type in:
 
 ```shell
-sudo rasp-config
+sudo raspi-config
 ```
-This will open the configuration tool. Navigate the menu and change your password.  After that, and enable the `ssh` server on your Pi.  Next, setup your wi-fi by clicking on the network icon in the top right hand side of the GUI.  You should be able to identify your wi-fi network.  Click on it and enter the proper credentials.  Test your wi-fi by removing the network cable and running the `ping` command or opening the GUI browser.  
+This will open the configuration tool. Navigate the menu and change your password.  After that, and enable the `ssh` server on your Pi, (it will probably be in `interfacing options`.  Next, setup your wi-fi by clicking on the network icon in the top right hand side of the GUI.  You should be able to identify your wi-fi network.  Click on it and enter the proper credentials.  Test your wi-fi by removing the network cable and running the `ping` command or opening the GUI browser.  
 
 You should now be able to `ssh` into your Raspberry Pi 3 (from a host on the same wi-fi) with the hostname `raspberrypi` or `raspberrypi.local` or by directly connecting to the IP by running `sudo ifconfig`.  The username will be `pi` and the password will be the one you just configured.  If you are having issues with the hostname you might want to take a look at a project called [avahi](http://avahi.org).
 
@@ -64,3 +64,4 @@ After you've successfully `ssh`'ed into your Pi you can remove all cables except
 
 Congratulations!  You now have the start to your home automation hub!
 
+{% include analytics.html %}
