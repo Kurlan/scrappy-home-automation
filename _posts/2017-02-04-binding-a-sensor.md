@@ -20,11 +20,41 @@ Items can be bound to *Bindings*.  Bindings allow for Items to read or write to 
 
 {% include images.html name="rp_pinout.png" caption="The pinout diagram for a Raspberry Pi 2.  It is the same for the 3" %}
 
+## Bench testing our sensor
+Before we do our binding we will bench test our GPIO.  For this post we will be using a [reed sensor](http://amzn.to/2l7d1XB).  These sensors are simple, as there are two parts.  One side is the sensor and the other is a magnet.  When the magnet is nearby the sensor it will report a 1, otherwise it will be a 0.  We will connect this sensor to `GPIO 27` (the 7th pin down on the left, or pin 11).  We will power it by connecting it to pin 1, which is 3.3v.  Simply connect these pins to your breadboard and connect the ends of the reed sensor.
+
+Open up a shell and we can verify that the GPIO ports are working correctly.
+
+```shell
+# Set up GPIO 27 and set to input
+echo "27" > /sys/class/gpio/export
+echo "in" > /sys/class/gpio/gpio27/direction
+```
+
+We've now setup our pin for reading.  Let's read the value
+
+```shell
+cat /sys/class/gpio/gpio27/value
+> 0
+```
+
+If we touch the contact ends of our sensor, we should get a different value
+
+```shell
+cat /sys/class/gpio/gpio27/value
+> 1
+```
+
+Afterwards, we should unexport our pin so other processes can use it:
+
+```shell
+echo "27" > /sys/class/gpio/unexport
+```
+
+We are now ready to bind this pin to openHAB.
+
 ## Installing the GPIO Binding
 Select the `PaperUI` by navigating to `http://raspberrypi:8080/`.  The `PaperUI` for openHAB will someday in the future be full-featured enough to allow for effortless configurations for all openHAB entities.  However, at the writing of this post the only thing it's really useful for is installing Bindings.  Click `Add-ons` and find the `GPIO Binding`.  Click on the `INSTALL` button.  We can now bind the `GarageDoorClosedSensor` item to our newly installed binding.
-
-## Bench testing our sensor
-For this post we will be bench testing a [reed sensor](http://amzn.to/2l7d1XB).  These sensors are simple, as there are two parts.  One side is the sensor and the other is a magnet.  When the magnet is nearby the sensor it will report a 1, otherwise it will be a 0.  We will connect this sensor to `GPIO 27` (the 7th pin down on the left, or pin 11).  We will power it by connecting it to pin 1, which is 3.3v.  Simply connect these pins to your breadboard and connect the ends of the reed sensor.
 
 ## Binding to the Item
 Accessing GPIO requires that the openhab user is in the GPIO POSIX group.  Simply adding this user to the group with the command below
