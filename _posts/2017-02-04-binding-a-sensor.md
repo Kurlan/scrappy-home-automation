@@ -49,7 +49,13 @@ This indicated to me that something had not released the GPIO pin I was using.  
 sudo su # get a root shell
 echo "27" > /sys/class/gpio/unexport # unexport pin 27 
 exit # we no longer need root
-sudo systemctl restart openhab3.service # restart the service
+sudo systemctl restart openhab2.service # restart the service
+```
+
+Alternatively, you can alter your Item declaration to include the `force:yes` option, which will forcefully take over the pin even if it is use.  Use this if you don't anticipate using this pin for another application at the same time.
+
+```
+Contact GarageDoorClosedSensor "Garage door sensor is [%s]" <garagedoor> (GarageDoor) { gpio="pin:27 force:yes" }
 ```
 
 ### Verify
@@ -59,8 +65,14 @@ Now, when you navigate to `http://raspberrypi:8080/basicui/app?sitemap=myhouse` 
 
 {% include images.html name="sensor_open.png" caption="When the contact is applied it switches to OPEN" %}
 
+One issue here is that when the contact is near the sensor the value is `CLOSED`.  This is technically correct, but it is the opposite of this for our garage door opener because when the door is closed the contact will be near the sensor.  This is not a problem and we have two options, we can add a flag to our Item or perform a transformation.  Adding the flag is easy, simply add the `activelow:yes` to the `GPIO` key/value pairs as follows:
+
+```
+Contact GarageDoorClosedSensor "Garage door sensor is [%s]" <garagedoor> (GarageDoor) { gpio="pin:27 force:yes activelow:yes" }
+```
+
 ## Inverting the mapping with a Transformation
-One issue here is that when the contact is near the sensor the value is `CLOSED`.  This is technically correct, but it is the opposite of this for our garage door opener because when the door is closed the contact will be near the sensor.  This is not a problem, we just need to do a bit of work.  First, we need to install the transformation add-on. Navigate to the `PaperUI` (http://raspberrypi:8080/) and click on the `Add-ons` tab.  Click on the `Transformations` button.  Finally, click `Install` on the `Map Transformation` add-on.  
+While this may be overkill for this example we can map the values from the pins to aribtrary strings.  First, we need to install the transformation add-on. Navigate to the `PaperUI` (http://raspberrypi:8080/) and click on the `Add-ons` tab.  Click on the `Transformations` button.  Finally, click `Install` on the `Map Transformation` add-on.  
 
 Now we need to define a map transformatin by creation a (you guessed it) a configuration file in the `/etc/openhab2/transform` directory. We will create a file called `garageDoorSensor.map` (`sudo -u openhab vim /etc/openhab2/transform/garageDoorSensor.map`) with the following content:
 
@@ -72,7 +84,7 @@ CLOSED=open
 Next, we will reference this map in our `garage.items` file (`sudo -u openhab vim /etc/openhab2/items/garage.items`) and alter our GarageDoorClosedSensor item to the following
 
 ```
-Contact GarageDoorClosedSensor "Garage door sensor is [MAP(garageDoorSensor.map):%s]" <garagedoor> (GarageDoor) { gpio="pin:27" }
+Contact GarageDoorClosedSensor "Garage door sensor is [MAP(garageDoorSensor.map):%s]" <garagedoor> (GarageDoor) { gpio="pin:27 force:yes"}
 ```
 
 When navigating back to the myhouse Sitemap note that the states have been inverted and the values are now lowercase.
