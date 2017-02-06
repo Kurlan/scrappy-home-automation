@@ -2,6 +2,7 @@
 layout: default
 title: "Setting up your Pi"
 date:   '2017-01-29T13:25:01-0800'
+comments: true
 ---
 # Setting up your Pi
 In this blog post we'll document unboxing our Raspberry Pi and preparing it to be our home automation hub.
@@ -65,3 +66,4 @@ After you've successfully `ssh`'ed into your Pi you can remove all cables except
 Congratulations!  You now have the start to your home automation hub!
 
 {% include analytics.html %}
+{% include disqus.html %}

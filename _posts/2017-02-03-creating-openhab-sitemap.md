@@ -2,6 +2,7 @@
 layout: default
 title: "Creating an openHAB sitemap"
 date:   '2017-02-03T15:34:00-0800'
+comments: true
 ---
 # Creating openHAB Items and a Sitemap
 
@@ -75,3 +76,4 @@ Open a browser and naviate to the following URL `http://raspberrypi:8080/basicui
 Congratulations!  You've just created some basic Items and created a Sitemap!
 
 {% include analytics.html %}
+{% include disqus.html %}

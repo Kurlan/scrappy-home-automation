@@ -2,6 +2,7 @@
 layout: default
 title: "Binding a Sensor"
 date:   '2017-02-04T12:01:00-0800'
+comments: true
 ---
 # Binding a Sensor to an Item
 
@@ -92,3 +93,4 @@ When navigating back to the myhouse Sitemap note that the states have been inver
 Congratulations!  You've configured your first Binding and created your first Transformation!
 
 {% include analytics.html %}
+{% include disqus.html %}

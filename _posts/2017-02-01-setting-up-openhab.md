@@ -2,6 +2,7 @@
 layout: default
 title: "Installing OpenHAB"
 date:   '2017-02-01T18:01:00+0800'
+comments: true
 ---
 # Installing openHAB
 
@@ -96,3 +97,4 @@ sudo apt-get install openhab2-addons
 Congratulations, you've installed openHAB 2.0!
 
 {% include analytics.html %}
+{% include disqus.html %}
