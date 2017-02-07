@@ -24,7 +24,6 @@ github_username:  Kurlan
 
 # Build settings
 markdown: kramdown
-permalink: '/:title/'
 gems: [jekyll-paginate]
 paginate: 10
 exclude:
