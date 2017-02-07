@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: "Setting up your Pi"
 date:   '2017-01-29T13:25:01-0800'
 comments: true

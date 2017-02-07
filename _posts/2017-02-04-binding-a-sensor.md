@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: "Binding a Sensor"
 date:   '2017-02-04T12:01:00-0800'
 comments: true

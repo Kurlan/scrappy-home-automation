@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: "Installing OpenHAB"
 date:   '2017-02-01T18:01:00+0800'
 comments: true
