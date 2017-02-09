@@ -4,9 +4,6 @@ title: "Installing OpenHAB"
 date:   '2017-02-01T18:01:00+0800'
 comments: true
 ---
-{% include adsense.html %}
-# Installing openHAB
-
 ## Goal
 The goal for this post is to install openHAB 2.0
 

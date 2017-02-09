@@ -4,9 +4,6 @@ title: "Binding a Sensor"
 date:   '2017-02-04T12:01:00-0800'
 comments: true
 ---
-{% include adsense.html %}
-# Binding a Sensor to an Item
-
 ## Goal
 The goal for this post is to do a bench test where a reed sensor value is read via an openHAB Binding
 

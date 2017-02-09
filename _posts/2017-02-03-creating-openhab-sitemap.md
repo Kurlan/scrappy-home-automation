@@ -4,9 +4,6 @@ title: "Creating an openHAB sitemap"
 date:   '2017-02-03T15:34:00-0800'
 comments: true
 ---
-{% include adsense.html %}
-# Creating openHAB Items and a Sitemap
-
 ## Goal
 The goal for this post is to create some basic [Items](http://docs.openhab.org/configuration/items.html) and a simple openHAB Sitemap
 

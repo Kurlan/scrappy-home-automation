@@ -4,8 +4,6 @@ title: "Setting up your Pi"
 date:   '2017-01-29T13:25:01-0800'
 comments: true
 ---
-{% include adsense.html %}
-# Setting up your Pi
 In this blog post we'll document unboxing our Raspberry Pi and preparing it to be our home automation hub.
 
 ## Goal
