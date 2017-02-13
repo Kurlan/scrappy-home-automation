@@ -41,6 +41,3 @@ You will need to find a place on your existing garage door where you can install
 You should now be able to open and close the door and notice that the sensor has switched from `OPEN` to `CLOSED`.
 
 Congratulations!  You have now installed a web-enabled Garage door opener!
-
-{% include analytics.html %}
-{% include disqus.html %}

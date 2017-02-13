@@ -63,6 +63,3 @@ After you've successfully `ssh`'ed into your Pi you can remove all cables except
 {% include images.html name="pi_with_one_cable.png" caption="Look ma!  No hands!" %}
 
 Congratulations!  You now have the start to your home automation hub!
-
-{% include analytics.html %}
-{% include disqus.html %}

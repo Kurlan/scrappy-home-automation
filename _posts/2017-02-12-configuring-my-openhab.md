@@ -48,6 +48,3 @@ After some time the tab on the header of [myopenhab.org](myopenhab.org) will go 
 
 Congratulatons! You have configured my.openHAB to control your home automation from anywhere!
 
-
-{% include analytics.html %}
-{% include disqus.html %}

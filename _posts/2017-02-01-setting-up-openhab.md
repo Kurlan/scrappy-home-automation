@@ -93,6 +93,3 @@ To avoid having to install all of the add-ons manually you can install them all 
 sudo apt-get install openhab2-addons
 ```
 Congratulations, you've installed openHAB 2.0!
-
-{% include analytics.html %}
-{% include disqus.html %}

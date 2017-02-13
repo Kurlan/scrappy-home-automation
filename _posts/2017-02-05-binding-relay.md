@@ -78,6 +78,3 @@ end
 Here we basically create a rule that when it the `GarageDoorSwitch` received a command we sleep for `SLEEP_TIME` (3000 ms in this case) and then turn the switch back ON.  Going back to the sitemap, when we hit our switch you should now hear two clicks three seconds apart.
 
 Congratulations!  You've just created a momenty switch that controls a relay and bound it to openHAB.
-
-{% include analytics.html %}
-{% include disqus.html %}
