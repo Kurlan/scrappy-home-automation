@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Configuring my.openHAB"
-date:   '2017-02-10T17:16:00-0800'
+date:   '2017-02-12T17:16:00-0800'
 comments: true
 ---
 ## Goal
@@ -35,7 +35,9 @@ my.openHAB requires two pieces of information, a UUID and a secret.  These value
 
 ```shell
 cat /var/lib/openhab2/uuid
+> YOUR UUID PRINTED HERE
 cat /var/lib/openhab2/openhabcloud/secret
+> YOUR SECRET PRINTED HERE
 ```
 
 Keep these values secret!  Go to the `Account` section of [myopenhab.org](myopenhab.org) (visible when you hover over your email) and click update.  Then, you should restart your openHAB service
@@ -45,6 +47,8 @@ sudo systemctl restart openhab2.service
 ```
 
 After some time the tab on the header of [myopenhab.org](myopenhab.org) will go from `Offline` (shaded red) to `Online` (shaded green).  When this happens you can navigate to your sitemap remotely by going to `https://home.myopenhab.org/basicui/app?sitemap=myhouse`.  You can see the status of your garage door and control your garage door remotely.
+
+{% include images.html name="my_openahb.png" %}
 
 Congratulatons! You have configured my.openHAB to control your home automation from anywhere!
 

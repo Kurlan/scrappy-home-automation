@@ -73,8 +73,25 @@ rule "Garage Door is a momentary switch"
                 Thread::sleep(SLEEP_TIME)
                 sendCommand(GarageDoorSwitch,ON)
 end
-``` 
+```
 
 Here we basically create a rule that when it the `GarageDoorSwitch` received a command we sleep for `SLEEP_TIME` (3000 ms in this case) and then turn the switch back ON.  Going back to the sitemap, when we hit our switch you should now hear two clicks three seconds apart.
+
+### Modifying the sitemap control
+Since there's essentially one state for our switch we will change it to a button control instead of a control with two states.  Open your sitemap file (`sudo -u openhab vim /etc/openhab2/sitemaps/myhouse.sitemap` and alter the garage section:
+
+```
+sitemap myhouse label="My home automation" {
+        Frame label="Garage" {
+                Text item=GarageDoorClosedSensor
+                Switch item=GarageDoorSwitch mappings=[OFF="Press the button"]
+
+        }
+}
+```
+
+After reloading the sitemap you should now see a button instead of a slider switch.
+
+{% include images.html name="momentary_switch.png" %}
 
 Congratulations!  You've just created a momenty switch that controls a relay and bound it to openHAB.
