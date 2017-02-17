@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Binding a Relay"
-date:   '2017-02-05T17:30:00-0800'
+date:   '2017-02-05T11:30:00-0800'
 comments: true
 ---
 ## Goal
