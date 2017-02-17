@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Installing the Garage system"
-date:   '2017-02-10T17:16:00-0800'
+date:   '2017-02-10T17:16:00+0800'
 comments: true
 ---
 ## Goal
