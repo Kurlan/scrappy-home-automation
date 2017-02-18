@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Automating the Door and Pushover Notifications"
+title: "Automating the Garage Door"
 date:   '2017-02-16'
 comments: true
 ---
