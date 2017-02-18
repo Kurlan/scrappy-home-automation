@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Installing OpenHAB"
-date:   '2017-02-01T18:01:00+0800'
+date:   '2017-02-01'
 comments: true
 ---
 ## Goal

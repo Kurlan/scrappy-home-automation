@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Binding a Relay"
-date:   '2017-02-05T11:30:00+0800'
+date:   '2017-02-05'
 comments: true
 ---
 ## Goal
@@ -10,7 +10,7 @@ The goal for this post is to do a bench test for an LED, a relay, and then bind 
 ## What you need
 * Breadboard
 * Resistor, transistor, diode and LED
-* Relay
+* <a href="http://amzn.to/2m9ylvX"> Relay</a>
 
 ## Bench testing an LED
 First we will wire an LED into our GPIO ports and test it via the command line.  Wire up an LED to your breadboard as such (use GPIO17)
@@ -64,18 +64,20 @@ The basic idea is that the GPIO pin will control the transistor.  When the trans
 The last step is to make our switch momentary.  We will do this via openHAB rules.  Create a rules file `sudo -u openhab /etc/openahb2/rules/garagedoor.rules` with the following content:
 
 ```
-var SLEEP_TIME = 3000
+var SLEEP_TIME = 1000
 
 rule "Garage Door is a momentary switch"
         when
                 Item GarageDoorSwitch received command
         then
-                Thread::sleep(SLEEP_TIME)
-                sendCommand(GarageDoorSwitch,ON)
+		if (receivedCommand == OFF) {
+                	Thread::sleep(SLEEP_TIME)
+                	sendCommand(GarageDoorSwitch,ON)
+		}
 end
 ```
 
-Here we basically create a rule that when it the `GarageDoorSwitch` received a command we sleep for `SLEEP_TIME` (3000 ms in this case) and then turn the switch back ON.  Going back to the sitemap, when we hit our switch you should now hear two clicks three seconds apart.
+Here we basically create a rule that when it the `GarageDoorSwitch` received a command we sleep for `SLEEP_TIME` (`1000` milliseconds or 1 second in this case) and then turn the switch back ON.  Going back to the sitemap, when we hit our switch you should now hear two clicks three seconds apart.
 
 ### Modifying the sitemap control
 Since there's essentially one state for our switch we will change it to a button control instead of a control with two states.  Open your sitemap file (`sudo -u openhab vim /etc/openhab2/sitemaps/myhouse.sitemap` and alter the garage section:

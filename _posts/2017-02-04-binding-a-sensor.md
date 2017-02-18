@@ -1,16 +1,16 @@
 ---
 layout: post
 title: "Binding a Sensor"
-date:   '2017-02-04T12:01:00-0800'
+date:   '2017-02-04'
 comments: true
 ---
 ## Goal
 The goal for this post is to do a bench test where a reed sensor value is read via an openHAB Binding
 
 ## What you need
-* A Raspberry Pi
+* <a href="http://amzn.to/2lW0OJz">A Raspberry Pi</a>
 * An openHAB Sitemap configured according to the previous post
-* A [reed sensor](http://amzn.to/2l7d1XB), a breadboard (optional), and some wiring
+* A [reed sensor](http://amzn.to/2kKoXhj), a breadboard (optional), and <a href="http://amzn.to/2kKiiUp">some wiring</a>
 
 ## What is a Binding?
 Items can be bound to *Bindings*.  Bindings allow for Items to read or write to external entities.  In this post we will use the `GPIO` binding, which will allow openHAB to access the GPIO (General Purpose Input/Output) pins on the Raspberr Pi.

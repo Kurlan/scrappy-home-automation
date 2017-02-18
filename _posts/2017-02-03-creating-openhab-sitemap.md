@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Creating an openHAB sitemap"
-date:   '2017-02-03T15:34:00-0800'
+date:   '2017-02-03'
 comments: true
 ---
 ## Goal

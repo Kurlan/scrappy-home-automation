@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Setting up your Pi"
-date:   '2017-01-29T13:25:01-0800'
+date:   '2017-01-29'
 comments: true
 ---
 In this blog post we'll document unboxing our Raspberry Pi and preparing it to be our home automation hub.
@@ -10,8 +10,8 @@ In this blog post we'll document unboxing our Raspberry Pi and preparing it to b
 The goal is to be able to remotely access our Pi by via `ssh` so we don't need to be physically present to access our hub. 
 
 ## What you need for this post
-* <a target="_blank" href="https://www.amazon.com/gp/product/B01CD5VC92/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B01CD5VC92&linkCode=as2&tag=scrappyhomeau-20&linkId=cc81c3d2f83cc28b6fefe22ad022b9b2">Raspberry Pi 3</a><img src="//ir-na.amazon-adsystem.com/e/ir?t=scrappyhomeau-20&l=am2&o=1&a=B01CD5VC92" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" >
-* A <a target="_blank" href="https://www.amazon.com/gp/product/B01H5ZNOYG/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B01H5ZNOYG&linkCode=as2&tag=scrappyhomeau-20&linkId=0eaad5846ec7ae095c59357a7c173d10">MicroSD card</a><img src="//ir-na.amazon-adsystem.com/e/ir?t=scrappyhomeau-20&l=am2&o=1&a=B01H5ZNOYG" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />.  We recommend something formatted and preloaded with the Raspbian operating system to avoid having to format and copy over files.  Make sure to get something with at least 8gb of capacity
+* <a href="http://amzn.to/2lYHl81">Raspberry Pi 3</a>
+* A <a href="http://amzn.to/2m9x489">MicroSD card</a>.  We recommend something formatted and preloaded with the Raspbian operating system to avoid having to format and copy over files.  Make sure to get something with at least 8gb of capacity
 * A 2.5A micro USB power cord and adapter
 * An HDMI cable and monitor
 * USB Mouse & Keyboard
@@ -19,7 +19,7 @@ The goal is to be able to remotely access our Pi by via `ssh` so we don't need t
 * Familiarity with the Linux command line and how to `ssh` to a remote server
 
 ## The Hardware
-We decided that we would use the <a target="_blank" href="https://www.amazon.com/gp/product/B01CD5VC92/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B01CD5VC92&linkCode=as2&tag=scrappyhomeau-20&linkId=cc81c3d2f83cc28b6fefe22ad022b9b2">Raspberry Pi 3</a><img src="//ir-na.amazon-adsystem.com/e/ir?t=scrappyhomeau-20&l=am2&o=1&a=B01CD5VC92" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" > as the basis for our home automation.  The main reasons were the cost (who can beat $40 bucks) and the form factor.  This thing is tiny.  It has wi-fi and Bluetooth built in as well so there is less wiring for the setup in general.  It has a fast processor and can run a Linux, which gives us the ability to install a large amount of freely available software.
+We decided that we would use theR <a href="http://amzn.to/2lYHl81">Raspberry Pi 3</a>Raspberry Pi 3</a> as the basis for our home automation.  The main reasons were the cost (who can beat $40 bucks) and the form factor.  This thing is tiny.  It has wi-fi and Bluetooth built in as well so there is less wiring for the setup in general.  It has a fast processor and can run a Linux, which gives us the ability to install a large amount of freely available software.
 
 {% include images.html name="pi_box.png" caption="The Raspberry Pi 3 comes in a cute box"  %}
 
