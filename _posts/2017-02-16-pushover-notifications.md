@@ -7,16 +7,16 @@ comments: true
 ## Goal
 So it's all well and nice that we can control the garage door with openHAB but I wouldn't call our setup "smart" or even "automated".  All we've done is basically create a remote control for our garage.  We can make it cooler.  
 
-We have a large problem in my household though.  We are really bad at closing the garage door.  We once left on vacation with the door wide open and we had to have our neighbors call and close it for us.  So in this post we will create some rules that will notify us when the garage door is open for more than a couple of hours.  On top of this we will code in a rule that will automatically close the door when it is open for too long.
+We have a large problem in my household.  We are really bad at closing the garage door.  We once left on vacation with the door wide open and we had to have our neighbors close it for us.  So in this post we will create some rules that will notify us when the garage door is open for more than a couple of hours.  On top of this we will code in a rule that will automatically close the door when it is open for too long.
 
 ## What you need
 * An automated garage door as outlined in the previous blog posts
 
-## Pushover
-[Pushover](https://pushover.net/) is a simple notificatins framework with a binding in openHAB. After a free seven day trial it will cost $5 to send notifications for the rest of your life, so its worth it. Integration will be relatively straight-forward.  First, we will download the mobile app on our phones.  Next, we will register our openHAB application with Pushover and install the Pushover binding.
+## Pushover Notifications
+[Pushover](https://pushover.net/) is a simple notifications framework with a binding in openHAB. After a free seven day trial it will cost $5 to send notifications for the rest of your life, so its worth it. Integration will be relatively straight-forward.  First, we will download the mobile app on our phone.  Next, we will register our openHAB application with Pushover and install the Pushover binding.
 
 ### Install the mobile client and register your application
-First things first, you will need to download the mobile application to receive notifications.  You can find links [here](https://pushover.net/clients). You can sign up for an account after the app has downloaded. You will need the User token for the next section.
+First things first, you will need to download the mobile application to receive notifications.  You can find links [here](https://pushover.net/clients). Sign up for an account after the app has downloaded. You will need the User token for the next section.
 
 After you have verified your email you can register a new application at <a href="https://pushover.net">pushover.net</a>.  You will need the API token key in the next section.
 
@@ -32,7 +32,7 @@ defaultTitle=openHAB
 ```
 
 ### Sending notifications
-Now we can test the notifications we've set up with our existing rule from a previous post.  We can add a new rule our rule set to send a notification so that we can test.  Open up our `garagedoor.rules` configuration file (`sudo -u openhab vim /etc/openhab2/rules/garagedoor.rules`) and add the following rule:
+Now we can test the notifications we've set up.  We will add a new rule to our rule set to send a notification.  Open up our `garagedoor.rules` configuration file (`sudo -u openhab vim /etc/openhab2/rules/garagedoor.rules`) and add the following rule:
 
 ```
 rule "Garage Door sensor changed state"
@@ -43,10 +43,10 @@ rule "Garage Door sensor changed state"
         end
 ```
 
-When you got to your openHAB page (http://raspberrypi:8080/basicui/app?sitemap=myhouse) and open and close the garage door you should receive two notifications on your phone, one for the opening and one when it closed.
+When you got to your openHAB page (http://raspberrypi:8080/basicui/app?sitemap=myhouse) and open and close the garage door you should receive two notifications on your phone, one for the opening and one when it closed.  Delete this rule after you've verified your setup.
 
 ## Creating useful rules
-Now that we have tested pushover it's time to create some useful rules.  The first rule I would like to create is to send me a notification if the garage door has been opened for some extended period of time.  This will allow me to log in and close the garage door if I didn't intend to keep it open for that long.  The rule below meet this requirement:
+Now that we have tested Pushover it's time to create some useful rules.  The first rule I would like to create is to send me a notification if the garage door has been opened for some extended period of time.  This will allow me to log in and close the garage door if I didn't intend to keep it open for that long.  The rule below meets this requirement:
 
 ```
 import org.openhab.model.script.actions.Timer
@@ -73,7 +73,7 @@ rule "Garage Door open for extended period of time sends notification"
 
 After saving the file you should receive an alert 10 seconds after the door opens.  Once this has been verfied you can change the `EXTENDED_GARAGE_DOOR_TIME_SECONDS` variable to a reasonable number (I have set mine to `3600` seconds or one hour)
 
-The second rule I'd like to create is to automatically close the door when it's been open an unusual amount of time.  This way, when we go on vacation I'll never have to worry that I've left the garage door open (which actually happened to us).  The rule is very similar to the previous rule:
+The second rule I'd like to create is to automatically close the door when it's been open an unusual amount of time.  This way, when we go on vacation I'll never have to worry that I've left the garage door open.  The rule is very similar to the previous rule:
 
 ```
 import org.openhab.model.script.actions.Timer
@@ -100,7 +100,7 @@ rule "Garage Door open for unusual period of time closes door and sends notifica
         end
 ```
 
-We can test this again and this time, the garage door will shut on its own after ten seconds.  Again, change this value to something reasonable (I have this set to `7200` seconds or two hours).
+We can test this again and this time, the garage door will shut on its own after `10` seconds.  Again, change this value to something reasonable (I have this set to `7200` seconds or two hours).
 
 Combining all rules together here is what my `garagedoor.rules` file looks like:
 
