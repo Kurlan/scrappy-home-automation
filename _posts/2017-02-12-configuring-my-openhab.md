@@ -11,7 +11,7 @@ The goal for this post is to properly configure my.openHAB to access your sitema
 * The sitemap for the garage system from previous posts
 
 ## my.openHAB registration
-You will need to go to [myopenhab.org](myopenhab.org) and register for an account.  After you have done this check your email to confirm it.  Without confirmation you will not be able to use the features of my.openHAB.
+You will need to go to [myopenhab.org](https://myopenhab.org/) and register for an account.  After you have done this check your email to confirm it.  Without confirmation you will not be able to use the features of my.openHAB.
 
 ## Install the openHAB Cloud Connector
 Go to the `PaperUI` (`raspberrypi:8080/start/index`) and click on `Add-ons`.  Select the `MISC` column and click `INSTALL` on the `openHAB Clound Connector`.
