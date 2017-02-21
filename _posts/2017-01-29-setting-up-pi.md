@@ -19,7 +19,7 @@ The goal is to be able to remotely access our Pi by via `ssh` so we don't need t
 * Familiarity with the Linux command line and how to `ssh` to a remote server
 
 ## The Hardware
-We decided that we would use theR <a href="http://amzn.to/2lYHl81">Raspberry Pi 3</a>Raspberry Pi 3</a> as the basis for our home automation.  The main reasons were the cost (who can beat $40 bucks) and the form factor.  This thing is tiny.  It has wi-fi and Bluetooth built in as well so there is less wiring for the setup in general.  It has a fast processor and can run a Linux, which gives us the ability to install a large amount of freely available software.
+We decided that we would use the <a href="http://amzn.to/2lYHl81">Raspberry Pi 3</a> as the basis for our home automation.  The main reasons were the cost (who can beat $40 bucks) and the form factor.  This thing is tiny.  It has wi-fi and Bluetooth built in as well so there is less wiring for the setup in general.  It has a fast processor and can run a Linux, which gives us the ability to install a large amount of freely available software.
 
 {% include images.html name="pi_box.png" caption="The Raspberry Pi 3 comes in a cute box"  %}
 
