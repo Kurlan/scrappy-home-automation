@@ -1,12 +1,13 @@
-<div class="container-fluid">
+<div class="nav-sidebar">
   <div class="row">
     <div class="col-xs-12">
       <ul class="nav nav-sidebar">
-        <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
+        <li class="active"><a href="{{site.baseurl | prepend: site.url }}">Home<span class="sr-only"></span></a></li>
 
         {% for post in site.posts reversed %}
+        {% assign loopindex = forloop.index %}
         <li>
-            <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+            <a href="{{ post.url | prepend: site.baseurl }}">{{loopindex}}. {{ post.title }}</a>
         </li>
         {% endfor %}
       </ul>

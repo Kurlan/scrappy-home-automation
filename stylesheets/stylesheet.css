@@ -254,6 +254,10 @@ ul.nav.nav-sidebar li {
   background-color: #eff0f1;
   border: 0; }
 
+  .main-content-container {
+    float:left;
+  }
+  
 @media screen and (min-width: 64em) {
   .main-content {
     max-width: 64rem;
@@ -274,7 +278,11 @@ ul.nav.nav-sidebar li {
 .site-footer {
   padding-top: 2rem;
   margin-top: 2rem;
-  border-top: solid 1px #eff0f1; }
+  padding-right: 2rem;
+  border-top: solid 1px #eff0f1; 
+  float: right;
+  clear: both;
+  }
 
 .site-footer-owner {
   display: block;
