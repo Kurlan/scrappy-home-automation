@@ -61,7 +61,7 @@ We followed the instructions of [this blog post](http://www.susa.net/wordpress/2
 The basic idea is that the GPIO pin will control the transistor.  When the transisitor will control the current to the relay.  After wiring this up you should be able to hear a nice click on your relay when you press the button on your sitemap.
 
 ## Creating a momentary switch
-The last step is to make our switch momentary.  We will do this via openHAB rules.  Create a rules file `sudo -u openhab /etc/openahb2/rules/garagedoor.rules` with the following content:
+The last step is to make our switch momentary.  We will do this via openHAB rules.  Create a rules file `sudo -u vim openhab /etc/openahb2/rules/garagedoor.rules` with the following content:
 
 ```
 var SLEEP_TIME = 1000
