@@ -7,7 +7,7 @@
         {% for post in site.posts reversed %}
         {% assign loopindex = forloop.index %}
         <li>
-            <a href="{{ post.url | prepend: site.baseurl }}">{{loopindex}}. {{ post.title }}</a>
+            <a href="{{site.baseurl | prepend: site.url }}{{ post.url | prepend: site.baseurl }}">{{loopindex}}. {{ post.title }}</a>
         </li>
         {% endfor %}
       </ul>
