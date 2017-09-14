@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Next project: Tracking Bogeys with Bluetooth"
+title: "Bogey Tracking"
 date:   '2017-08-12'
 comments: true
 ---
