@@ -1,3 +1,4 @@
+---
 layout: post
 title: "Next project: Tracking Bogeys with Bluetooth"
 date:   '2017-08-12'
@@ -39,7 +40,6 @@ Next we will install `bluepy` so we can get programmatic access to our Bluetooth
 ```
 $ sudo apt-get install python-pip libglib2.0-dev
 $ sudo pip install bluepy
-
 ```
 
 We will now create a simple `python` program that will print out the *Received signal strength indication* (`rssi`), for all `Bluetooth` device addresses passed into it on the command line.  We will name it `btle_rssi.py`.  It spends 4.5 seconds scanning for devices.  
