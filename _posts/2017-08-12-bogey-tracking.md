@@ -4,6 +4,7 @@ title: "Bogey Tracking"
 date:   '2017-08-12'
 comments: true
 ---
+
 ## Goal
 This is my dog Bogey
 {% include images.html name="bogey.png" caption="Bogey" %}
