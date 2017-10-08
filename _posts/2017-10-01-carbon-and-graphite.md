@@ -5,7 +5,7 @@ date:   '2017-10-01'
 comments: true
 ---
 ## Goal
-We will install [carbon] (https://markinbristol.wordpress.com/2015/09/20/setting-up-graphite-api-grafana-on-a-raspberry-pi/) and graphite to log and access metrics about our devices.  This will allow us to emit the RSSI values in an easily accessible manner.
+We will install <a href="https://markinbristol.wordpress.com/2015/09/20/setting-up-graphite-api-grafana-on-a-raspberry-pi/">carbon</a> and graphite to log and access metrics about our devices.  This will allow us to emit the RSSI values in an easily accessible manner.
 
 ## What you need
 * A `Raspberry Pi` with a `Bluetooth` adapter 
