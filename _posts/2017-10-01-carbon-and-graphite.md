@@ -153,6 +153,8 @@ python metricsLogger.py testMetric 1
 
 Now you can navigate to `http://<yourHost>:8013/render?target=test.metric` and see a graph with a single data point.
 
+{% include images.html name="chart.png" caption="The basic graph of a data point"  %}
+
 Congratulations!  You are now logging metrics and making them available with graphite and carbon!
 
 
